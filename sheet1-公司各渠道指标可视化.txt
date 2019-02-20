@@ -1,0 +1,264 @@
+'1公司
+Private Sub CheckBox1_Click()
+If CheckBox1.Value = True Then
+ Worksheets(5).Columns("P:P").EntireColumn.Hidden = False
+Else
+ Worksheets(5).Columns("P:P").EntireColumn.Hidden = True
+End If
+End Sub
+
+'2东莞
+Private Sub CheckBox2_Click()
+If CheckBox2.Value = True Then
+ Worksheets(5).Columns("C:C").EntireColumn.Hidden = False
+Else
+ Worksheets(5).Columns("C:C").EntireColumn.Hidden = True
+End If
+End Sub
+
+'3佛山
+Private Sub CheckBox3_Click()
+If CheckBox3.Value = True Then
+ Worksheets(5).Columns("D:D").EntireColumn.Hidden = False
+Else
+ Worksheets(5).Columns("D:D").EntireColumn.Hidden = True
+End If
+End Sub
+
+'4广东
+Private Sub CheckBox4_Click()
+If CheckBox4.Value = True Then
+ Worksheets(5).Columns("E:E").EntireColumn.Hidden = False
+Else
+ Worksheets(5).Columns("E:E").EntireColumn.Hidden = True
+End If
+End Sub
+
+'5广州
+Private Sub CheckBox5_Click()
+If CheckBox5.Value = True Then
+ Worksheets(5).Columns("F:F").EntireColumn.Hidden = False
+Else
+ Worksheets(5).Columns("F:F").EntireColumn.Hidden = True
+End If
+End Sub
+
+'6湖北
+Private Sub CheckBox6_Click()
+If CheckBox6.Value = True Then
+ Worksheets(5).Columns("G:G").EntireColumn.Hidden = False
+Else
+ Worksheets(5).Columns("G:G").EntireColumn.Hidden = True
+End If
+End Sub
+
+'7江苏
+Private Sub CheckBox7_Click()
+If CheckBox7.Value = True Then
+ Worksheets(5).Columns("H:H").EntireColumn.Hidden = False
+Else
+ Worksheets(5).Columns("H:H").EntireColumn.Hidden = True
+End If
+End Sub
+
+'8山东
+Private Sub CheckBox8_Click()
+If CheckBox8.Value = True Then
+ Worksheets(5).Columns("I:I").EntireColumn.Hidden = False
+Else
+ Worksheets(5).Columns("I:I").EntireColumn.Hidden = True
+End If
+End Sub
+
+'9上海
+Private Sub CheckBox9_Click()
+If CheckBox9.Value = True Then
+ Worksheets(5).Columns("J:J").EntireColumn.Hidden = False
+Else
+ Worksheets(5).Columns("J:J").EntireColumn.Hidden = True
+End If
+End Sub
+
+'10深圳
+Private Sub CheckBox10_Click()
+If CheckBox10.Value = True Then
+ Worksheets(5).Columns("K:K").EntireColumn.Hidden = False
+Else
+ Worksheets(5).Columns("K:K").EntireColumn.Hidden = True
+End If
+End Sub
+
+'11四川
+Private Sub CheckBox11_Click()
+If CheckBox11.Value = True Then
+ Worksheets(5).Columns("L:L").EntireColumn.Hidden = False
+Else
+ Worksheets(5).Columns("L:L").EntireColumn.Hidden = True
+End If
+End Sub
+
+'12苏州
+Private Sub CheckBox12_Click()
+If CheckBox12.Value = True Then
+ Worksheets(5).Columns("M:M").EntireColumn.Hidden = False
+Else
+ Worksheets(5).Columns("M:M").EntireColumn.Hidden = True
+End If
+End Sub
+
+'13中山
+Private Sub CheckBox13_Click()
+If CheckBox13.Value = True Then
+ Worksheets(5).Columns("N:N").EntireColumn.Hidden = False
+Else
+ Worksheets(5).Columns("N:N").EntireColumn.Hidden = True
+End If
+End Sub
+
+'14珠海
+Private Sub CheckBox14_Click()
+If CheckBox14.Value = True Then
+ Worksheets(5).Columns("O:O").EntireColumn.Hidden = False
+Else
+ Worksheets(5).Columns("O:O").EntireColumn.Hidden = True
+End If
+End Sub
+
+'15 all
+Private Sub CheckBox15_Click()
+If CheckBox15.Value = True Then
+    CheckBox14.Value = True
+    CheckBox13.Value = True
+    CheckBox12.Value = True
+    CheckBox11.Value = True
+    CheckBox10.Value = True
+    CheckBox9.Value = True
+    CheckBox8.Value = True
+    CheckBox7.Value = True
+    CheckBox6.Value = True
+    CheckBox5.Value = True
+    CheckBox4.Value = True
+    CheckBox3.Value = True
+    CheckBox2.Value = True
+    CheckBox1.Value = True
+Else
+    CheckBox14.Value = False
+    CheckBox13.Value = False
+    CheckBox12.Value = False
+    CheckBox11.Value = False
+    CheckBox10.Value = False
+    CheckBox9.Value = False
+    CheckBox8.Value = False
+    CheckBox7.Value = False
+    CheckBox6.Value = False
+    CheckBox5.Value = False
+    CheckBox4.Value = False
+    CheckBox3.Value = False
+    CheckBox2.Value = False
+    CheckBox1.Value = False
+End If
+End Sub
+
+Private Sub ComboBox1_Change()
+
+End Sub
+
+'滚动条
+'Private Sub ScrollBar1_Change()
+    'a = ScrollBar1.Value
+    'b = 3 '图表数据的首行的行数=滚动条min属性
+    'c = 77 '图表数据的末行的行数=滚动条max属性
+    'Worksheets(5).Rows(b & ":" & (c + b - a)).EntireRow.Hidden = True
+    'Worksheets(5).Rows((b + c - a) & ":" & c).EntireRow.Hidden = False
+    'MsgBox ("您现在选择的观测区间为：近" & (a - 2) & "个月，请知悉，点确定我就消失了~")
+   '从开业月份开始拉版本
+   'Worksheets(4).Rows((a + 1) & ":" & c).EntireRow.Hidden = True
+   'Worksheets(4).Rows(b & ":" & a).EntireRow.Hidden = False
+   'MsgBox ("滚动条的值是：" & a)
+'End Sub
+
+'切换图形
+Private Sub ToggleButton1_Click()
+If ToggleButton1.Value = True Then
+    Worksheets(1).ChartObjects("图表 2").Activate
+    ActiveChart.ChartType = xlLineMarkers
+Else
+    Worksheets(1).ChartObjects("图表 2").Activate
+    ActiveChart.ChartType = xlColumnClustered
+End If
+End Sub
+
+'是否显示数据标签
+Private Sub ToggleButton2_Click()
+    Dim i As Integer
+If ToggleButton2.Value = True Then
+    Worksheets(1).ChartObjects("图表 2").Activate
+    c = ActiveChart.SeriesCollection.Count '先获取总共有多少条数
+    For i = 1 To c
+    ActiveChart.SeriesCollection(i).Select
+    ActiveChart.SeriesCollection(i).ApplyDataLabels
+    ActiveChart.SeriesCollection(i).DataLabels.Select
+    With Selection.Format.TextFrame2.TextRange.Font
+        .NameComplexScript = "微软雅黑"
+        .NameFarEast = "微软雅黑"
+        .Name = "微软雅黑"
+    End With
+    Selection.Format.TextFrame2.TextRange.Font.Bold = msoTrue
+    Next
+Else
+    Worksheets(1).ChartObjects("图表 2").Activate
+    d = ActiveChart.SeriesCollection.Count '先获取总共有多少条数
+    For i = 1 To d
+    Worksheets(1).ChartObjects("图表 2").Activate
+    ActiveSheet.ChartObjects("图表 2").Activate
+    ActiveChart.SeriesCollection(i).DataLabels.Select
+    Selection.Delete
+    Next
+End If
+End Sub
+
+'重载
+Private Sub CommandButton1_Click()
+
+If CommandButton1.Enabled = True Then
+    Sheets("智能分析").Range("S3:AF100").Copy
+    Sheets("智能分析").Range("C3").PasteSpecial Paste:=xlPasteValues '粘贴成值
+    Sheets("智能分析").Range("C3:P100").NumberFormatLocal = "0_);[红色](0)" '设置成整数
+End If
+
+If Sheets("Sheet4").Range("$E$27").Value = "百分数" Then
+    Sheets("智能分析").Range("C3:P100").NumberFormatLocal = "0%" '设置成百分数
+End If
+
+End Sub
+
+'同比
+Private Sub CommandButton2_Click()
+If CommandButton1.Enabled = True Then
+    Sheets("智能分析").Range("AI3:AV100").Copy
+    Sheets("智能分析").Range("C3").PasteSpecial Paste:=xlPasteValues '粘贴成值
+    Sheets("智能分析").Range("C3:P100").NumberFormatLocal = "0%" '设置成百分数
+End If
+End Sub
+
+'环比
+Private Sub CommandButton3_Click()
+If CommandButton1.Enabled = True Then
+    Sheets("智能分析").Range("AY3:BL100").Copy
+    Sheets("智能分析").Range("C3").PasteSpecial Paste:=xlPasteValues '粘贴成值
+    Sheets("智能分析").Range("C3:P100").NumberFormatLocal = "0%" '设置成百分数
+End If
+End Sub
+
+'占比
+Private Sub CommandButton4_Click()
+If CommandButton1.Enabled = True Then
+    Sheets("智能分析").Range("BO3:CB100").Copy
+    Sheets("智能分析").Range("C3").PasteSpecial Paste:=xlPasteValues '粘贴成值
+    Sheets("智能分析").Range("C3:P100").NumberFormatLocal = "0%" '设置成百分数
+End If
+End Sub
+
+
+
+
